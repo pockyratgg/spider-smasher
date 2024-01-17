@@ -1,0 +1,140 @@
+.grid-container{
+
+    width: 40%;
+
+    /*this is for centering vertically*/
+    height: 50vh; /*adjusts the space inbetween timers and grid - 50vh*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;   /*this is for centering horizontally*/
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.spider-container{
+    border: 10px solid gray;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    right: 600px;
+    left: 10px;
+    top: 230px;
+    background-image: url('images/websquarebackground.png');
+    background-size: contain; 
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-9deg);
+    }
+    75% {
+        transform: rotate(9deg);
+    }
+}
+
+@keyframes hit {
+    0%, 100% {
+        transform: rotate(100deg);
+    }
+    25% {
+        transform: rotate(-9deg);
+    }
+    75% {
+        transform: rotate(-9deg);
+    }
+}
+
+.image2 {
+    position: absolute;
+    left: 0px;
+    animation: hit 1.5s linear infinite 100ms;
+}
+
+
+.square {
+    height: 200px;
+    width: 200px;
+    border: solid black 2px;
+    border-radius: 5px;
+    animation: dance 0.5s linear infinite 300ms;
+    
+}
+
+.mole {
+    background-color:rgb(184, 23, 184);
+    background-image: url('images/cartoonspider.png');
+    background-color: transparent;
+    background-size: cover;
+    animation: dance 0.5s linear infinite 300ms;
+}
+
+
+/* centers the title */
+* {
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    display: inline-block;
+    text-align: center;
+    margin-right: 25px;
+    color:rgb(184, 23, 184);
+    font-family: "cursive", Times, serif;
+    font-size: 19px;
+}
+
+  body {
+    background-image: url('images/websquarebackground.png')
+}
+
+body {
+    cursor: url('hol335.cur'), auto;
+}
+
+/* overlay for start and game over*/
+.overlay-text {
+    display: none; /*set to none so it only shows when our visible class is on at the right time */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: rgb(184, 23, 184);
+    font-family: serif;
+}
+
+/*click to restart text is set to 30% of the game over size*/
+.overlay-text-small {
+    font-size: .3em;
+}
+
+/*we use forwards here because we want all properties from the end of our animations to apply to our overlay text*/
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column; /*this makes sure game over and click to restart stack ontop of each other instead of side by side*/
+    animation: overlay-grow 500ms forwards;
+}
+
+/*animation for the overlay to grow and setting the color*/
+@keyframes overlay-grow {
+    from {
+        background-color: (0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, .7); /*last value darkens the background*/
+        font-size: 9em;
+    }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Spider Smasher!</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="app.js" async></script> <!--setting to async so javascript file loads at the same time of the index.html file -->
+        <link rel="icon" type="mole" href="images/spiderbackground.png"/>
+    </head>
+    <body>
+        <img src="images/spidersmasherlogo.png" alt="titleimage" />
+
+        <!-- adding a display for time-left for a timer-->
+        <!--adding an h2 tag for the score-->
+        <div class="inline-div">
+            <h2>Time left:</h2>
+            <h2 id="time-left">30</h2>
+            <h2>Your score:</h2>
+            <h2 id="score">0</h2>
+          </div>
+
+        <!--Adding in start and game over text to build out an overlay in CSS/js-->
+        <div class="overlay-text visible">
+            Click to Start!
+        </div>
+        <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+
+        <!--Making a grid for the background of the game-->
+        <div class="grid-container">
+            <div class="square" id="1"></div>
+            <div class="square" id="2"></div>
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+            <div class="square" id="6"></div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+            <div class="square" id="9"></div>
+            
+        </div>
+
+</body>
+</html>
